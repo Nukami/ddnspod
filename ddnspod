@@ -1,0 +1,76 @@
+[event][regenerate_records_list][2018-11-12 04:46:01]:
+generating records list...
+[debug][Domain.List][2018-11-12 04:46:01]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:01'}, 'info': {'domain_total': 3, 'all_total': 3, 'mine_total': 3, 'share_total': '0', 'vip_total': 0, 'ismark_total': 0, 'pause_total': 0, 'error_total': 2, 'lock_total': 0, 'spam_total': 0, 'vip_expire': 0, 'share_out_total': 0}, 'domains': [{'id': 68861243, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2018-09-21 01:59:51', 'updated_on': '2018-09-21 01:59:51', 'punycode': 'sailark.com', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'sailark.com', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 53359279, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2017-01-18 00:06:10', 'updated_on': '2017-01-18 00:06:10', 'punycode': 'nukami.love', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'nukami.love', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 45271032, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'yes', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2016-08-22 13:19:55', 'updated_on': '2016-08-22 13:19:55', 'punycode': 'nta.cx', 'ext_status': '', 'src_flag': 'DNSPOD', 'name': 'nta.cx', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '11'}]}
+[debug][domain_id][2018-11-12 04:46:01]:
+68861243
+[debug][Record.List][2018-11-12 04:46:01]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:01'}, 'domain': {'id': 68861243, 'name': 'sailark.com', 'punycode': 'sailark.com', 'grade': 'DP_Free', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'ext_status': 'dnserror', 'ttl': 600, 'min_ttl': 600, 'dnspod_ns': ['f1g1ns1.dnspod.net', 'f1g1ns2.dnspod.net'], 'status': 'enable'}, 'info': {'sub_domains': '10', 'record_total': '3', 'records_num': '3'}, 'records': [{'id': '391075163', 'ttl': '600', 'value': '1.1.1.1', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:38:44', 'name': 'srv1', 'line': '默认', 'line_id': '0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}, {'id': '384445664', 'ttl': '10', 'value': '5.5.5.5', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:45:41', 'name': 'srv1', 'line': '默认', 'line_id': '0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}, {'id': '390900908', 'ttl': '600', 'value': '3.3.3.3', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:45:34', 'name': 'srv1', 'line': '移动', 'line_id': '10=3', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}]}
+[debug][sub_record][2018-11-12 04:46:01]:
+{'record_id': '391075163', 'line_id': '0'}
+[debug][sub_record][2018-11-12 04:46:01]:
+{'record_id': '384445664', 'line_id': '0'}
+[debug][sub_record][2018-11-12 04:46:01]:
+{'record_id': '390900908', 'line_id': '10=3'}
+[debug][new_record][2018-11-12 04:46:01]:
+{'domain': 'sailark.com', 'domain_id': 68861243, 'sub_domain': 'srv1', 'records': [{'record_id': '391075163', 'line_id': '0'}, {'record_id': '384445664', 'line_id': '0'}, {'record_id': '390900908', 'line_id': '10=3'}]}
+[debug][Domain.List][2018-11-12 04:46:01]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:01'}, 'info': {'domain_total': 3, 'all_total': 3, 'mine_total': 3, 'share_total': '0', 'vip_total': 0, 'ismark_total': 0, 'pause_total': 0, 'error_total': 2, 'lock_total': 0, 'spam_total': 0, 'vip_expire': 0, 'share_out_total': 0}, 'domains': [{'id': 68861243, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2018-09-21 01:59:51', 'updated_on': '2018-09-21 01:59:51', 'punycode': 'sailark.com', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'sailark.com', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 53359279, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2017-01-18 00:06:10', 'updated_on': '2017-01-18 00:06:10', 'punycode': 'nukami.love', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'nukami.love', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 45271032, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'yes', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2016-08-22 13:19:55', 'updated_on': '2016-08-22 13:19:55', 'punycode': 'nta.cx', 'ext_status': '', 'src_flag': 'DNSPOD', 'name': 'nta.cx', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '11'}]}
+[debug][domain_id][2018-11-12 04:46:01]:
+68861243
+[debug][Record.List][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'domain': {'id': 68861243, 'name': 'sailark.com', 'punycode': 'sailark.com', 'grade': 'DP_Free', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'ext_status': 'dnserror', 'ttl': 600, 'min_ttl': 600, 'dnspod_ns': ['f1g1ns1.dnspod.net', 'f1g1ns2.dnspod.net'], 'status': 'enable'}, 'info': {'sub_domains': '10', 'record_total': '2', 'records_num': '2'}, 'records': [{'id': '390900874', 'ttl': '600', 'value': '219.128.20.237', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-10 18:25:16', 'name': 'tst', 'line': '默认', 'line_id': '0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}, {'id': '390900892', 'ttl': '600', 'value': '4.4.4.4', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:45:38', 'name': 'tst', 'line': '国外', 'line_id': '3=0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}]}
+[debug][sub_record][2018-11-12 04:46:02]:
+{'record_id': '390900874', 'line_id': '0'}
+[debug][sub_record][2018-11-12 04:46:02]:
+{'record_id': '390900892', 'line_id': '3=0'}
+[debug][new_record][2018-11-12 04:46:02]:
+{'domain': 'sailark.com', 'domain_id': 68861243, 'sub_domain': 'tst', 'records': [{'record_id': '390900874', 'line_id': '0'}, {'record_id': '390900892', 'line_id': '3=0'}]}
+[debug][Domain.List][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'info': {'domain_total': 3, 'all_total': 3, 'mine_total': 3, 'share_total': '0', 'vip_total': 0, 'ismark_total': 0, 'pause_total': 0, 'error_total': 2, 'lock_total': 0, 'spam_total': 0, 'vip_expire': 0, 'share_out_total': 0}, 'domains': [{'id': 68861243, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2018-09-21 01:59:51', 'updated_on': '2018-09-21 01:59:51', 'punycode': 'sailark.com', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'sailark.com', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 53359279, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'no', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2017-01-18 00:06:10', 'updated_on': '2017-01-18 00:06:10', 'punycode': 'nukami.love', 'ext_status': 'dnserror', 'src_flag': 'DNSPOD', 'name': 'nukami.love', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '10'}, {'id': 45271032, 'status': 'enable', 'grade': 'DP_Free', 'group_id': '1', 'searchengine_push': 'yes', 'is_mark': 'no', 'ttl': '600', 'cname_speedup': 'disable', 'remark': '', 'created_on': '2016-08-22 13:19:55', 'updated_on': '2016-08-22 13:19:55', 'punycode': 'nta.cx', 'ext_status': '', 'src_flag': 'DNSPOD', 'name': 'nta.cx', 'grade_title': '新免费套餐', 'is_vip': 'no', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'records': '11'}]}
+[debug][domain_id][2018-11-12 04:46:02]:
+53359279
+[debug][Record.List][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'domain': {'id': 53359279, 'name': 'nukami.love', 'punycode': 'nukami.love', 'grade': 'DP_Free', 'owner': 'qcloud_uin_1279601166@qcloud.com', 'ext_status': 'dnserror', 'ttl': 600, 'min_ttl': 600, 'dnspod_ns': ['f1g1ns1.dnspod.net', 'f1g1ns2.dnspod.net'], 'status': 'enable'}, 'info': {'sub_domains': '10', 'record_total': '2', 'records_num': '2'}, 'records': [{'id': '390900929', 'ttl': '600', 'value': '2.2.2.2', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:45:00', 'name': 'trt', 'line': '默认', 'line_id': '0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}, {'id': '390900945', 'ttl': '600', 'value': '1.1.1.1', 'enabled': '1', 'status': 'enabled', 'updated_on': '2018-11-12 04:44:58', 'name': 'trt', 'line': '电信', 'line_id': '10=0', 'type': 'A', 'weight': None, 'monitor_status': '', 'remark': '', 'use_aqb': 'no', 'mx': '0'}]}
+[debug][sub_record][2018-11-12 04:46:02]:
+{'record_id': '390900929', 'line_id': '0'}
+[debug][sub_record][2018-11-12 04:46:02]:
+{'record_id': '390900945', 'line_id': '10=0'}
+[debug][new_record][2018-11-12 04:46:02]:
+{'domain': 'nukami.love', 'domain_id': 53359279, 'sub_domain': 'trt', 'records': [{'record_id': '390900929', 'line_id': '0'}, {'record_id': '390900945', 'line_id': '10=0'}]}
+[debug][regenerate_records_list][2018-11-12 04:46:02]:
+[{'domain': 'sailark.com', 'domain_id': 68861243, 'sub_domain': 'srv1', 'records': [{'record_id': '391075163', 'line_id': '0'}, {'record_id': '384445664', 'line_id': '0'}, {'record_id': '390900908', 'line_id': '10=3'}]}, {'domain': 'sailark.com', 'domain_id': 68861243, 'sub_domain': 'tst', 'records': [{'record_id': '390900874', 'line_id': '0'}, {'record_id': '390900892', 'line_id': '3=0'}]}, {'domain': 'nukami.love', 'domain_id': 53359279, 'sub_domain': 'trt', 'records': [{'record_id': '390900929', 'line_id': '0'}, {'record_id': '390900945', 'line_id': '10=0'}]}]
+[debug][get_ip][2018-11-12 04:46:02]:
+Current ip address: 219.128.23.213
+[event][modify_values][2018-11-12 04:46:02]:
+IP address has been changed
+[event][modify_value][2018-11-12 04:46:02]:
+modifying srv1.sailark.com, record_id = 391075163, line_id = 0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 391075163, 'name': 'srv1', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
+[event][modify_value][2018-11-12 04:46:02]:
+modifying srv1.sailark.com, record_id = 384445664, line_id = 0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '104', 'message': 'Domain record already exists', 'created_at': '2018-11-12 04:46:02'}}
+[error][ApiException][2018-11-12 04:46:02]:
+Error while modifying record value: Domain record already exists
+[event][modify_value][2018-11-12 04:46:02]:
+modifying srv1.sailark.com, record_id = 390900908, line_id = 10=3
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 390900908, 'name': 'srv1', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
+[event][modify_value][2018-11-12 04:46:02]:
+modifying tst.sailark.com, record_id = 390900874, line_id = 0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 390900874, 'name': 'tst', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
+[event][modify_value][2018-11-12 04:46:02]:
+modifying tst.sailark.com, record_id = 390900892, line_id = 3=0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 390900892, 'name': 'tst', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
+[event][modify_value][2018-11-12 04:46:02]:
+modifying trt.nukami.love, record_id = 390900929, line_id = 0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 390900929, 'name': 'trt', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
+[event][modify_value][2018-11-12 04:46:02]:
+modifying trt.nukami.love, record_id = 390900945, line_id = 10=0
+[debug][Record.Modify][2018-11-12 04:46:02]:
+{'status': {'code': '1', 'message': 'Action completed successful', 'created_at': '2018-11-12 04:46:02'}, 'record': {'id': 390900945, 'name': 'trt', 'value': '219.128.23.213', 'status': 'enable', 'weight': None}}
