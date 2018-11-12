@@ -26,8 +26,8 @@ ttl = 600
 # To disable log, or specify log level, please use log_level value
 # log_level in ['debug', 'error', 'event', 'disable']
 interval = 5
-log = "ddnspod"
-log_level = 'debug'
+log = "/var/log/ddnspod"
+log_level = 'event'
 
 
 __record_list = []
@@ -209,7 +209,7 @@ def modify_values(value):
             if record['value'] == value:
                 __log('event', 'modify_value', 'The value of %s.%s is already %s, record_id = %s, line_id = %s' % tmp)
             else:
-                __log('event', 'modify_value', 'modifying %s.%s to %s, record_id = %s, line_id = %s' % tmp)
+                __log('event', 'modify_value', 'modifying %s.%s, %s, record_id = %s, line_id = %s' % tmp)
                 modify_domain_value(sub_domain['domain_id'], sub_domain['sub_domain'], record['record_id'],
                                     record['line_id'], value)
 
@@ -240,7 +240,7 @@ def run():
         ip = get_dnspod_ip()
         __log('debug', 'get_ip', 'Current ip address: %s' % ip)
         if __last_ip != ip:
-            __log('event', 'deamon', 'IP address has been changed')
+            __log('event', 'deamon', 'IP address has been changed to %s' % ip)
             regenerate_records_list()
             modify_values(ip)
             __last_ip = ip
