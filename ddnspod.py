@@ -117,7 +117,7 @@ def new_record(domain, sub_domain):
         "domain_id": '0',
         "sub_domain": sub_domain,
         "records": []
-        # {'record_id': '0', 'line_id': '0'}
+        # {'record_id': '0', 'line_id': '0', 'value': '1.1.1.1'}
     }
     return record
 
@@ -151,7 +151,7 @@ def fix_record_id(record):
         records = records['records']
         for tmp in records:
             if tmp['name'] == record['sub_domain']:
-                sub_record = {'record_id': tmp['id'], 'line_id': tmp['line_id']}
+                sub_record = {'record_id': tmp['id'], 'line_id': tmp['line_id'], 'value': tmp['value']}
                 record['records'].append(sub_record)
                 __log('debug', 'sub_record', sub_record)
         if len(record['records']) == 0:
@@ -204,10 +204,14 @@ def modify_domain_value(domain_id, sub_domain, record_id, line_id, value):
 def modify_values(value):
     for sub_domain in __record_list:
         for record in sub_domain['records']:
-            tmp = (sub_domain['sub_domain'], sub_domain['domain'], record['record_id'], record['line_id'])
-            __log('event', 'modify_value', 'modifying %s.%s, record_id = %s, line_id = %s' % tmp)
-            modify_domain_value(sub_domain['domain_id'], sub_domain['sub_domain'], record['record_id'],
-                                record['line_id'], value)
+            tmp = (sub_domain['sub_domain'], sub_domain['domain'], record['value'], record['record_id'],
+                   record['line_id'])
+            if record['value'] == value:
+                __log('event', 'modify_value', 'The value of %s.%s is already %s, record_id = %s, line_id = %s' % tmp)
+            else:
+                __log('event', 'modify_value', 'modifying %s.%s to %s, record_id = %s, line_id = %s' % tmp)
+                modify_domain_value(sub_domain['domain_id'], sub_domain['sub_domain'], record['record_id'],
+                                    record['line_id'], value)
 
 
 def get_ip():
