@@ -1,22 +1,36 @@
+# ddnspod 0.1 by Nukami
+# 2018.11.12
+
 from urllib import request, parse
 import io
 import json
 import re
+import socket
+import threading
 import time
 
-# https://support.dnspod.cn/Kb/showarticle/tsid/227/
-# To generate an API Token, please follow the official token guide by dnspod.cn
+# To generate an API Token, please follow the official token guide by DNSPOD:
+# https://support.dnspod.cn/Kb/showarticle/tsid/227/ ;
+# sub_domains setup a list of subdomains for those you need to modify, it should looks like:
+# {'example.com': ['www', 'blog'], 'example.org': ['www']} ;
+# ttl(Time to live) value indicates the expired time of record cache on dns server,
+# for more details, please visit:
+# https://en.wikipedia.org/wiki/Time_to_live#DNS_records
+# ! NOTE that the minimal ttl for free user on dnspod is limited to 600
 token = "72604,f26d62a1b0b7a73fe667cab5b3ca52ad"
 sub_domains = {'sailark.com': ['srv1']}
 ttl = 600
 
-alternation = 10
-log = "ddnspod"
+# interval value is the time interval between an ip check to the next ip check ;
+# Use log value to specify log path ;
+# To disable log, or specify log level, please use log_level value
 # log_level in ['debug', 'error', 'event', 'disable']
+interval = 5
+log = "ddnspod"
 log_level = 'debug'
 
+
 __record_list = []
-__flog = None
 __last_ip = ''
 
 
@@ -85,9 +99,9 @@ def __log(level, method, data):
     if log_level == 'disable':
         return
     elif log_level == 'event' and level != 'event':
-            return
+        return
     elif log_level == 'error' and level not in ['event', 'error']:
-            return
+        return
 
     try:
         text = "[%s][%s][%s]:\n%s\n" % (level, method, get_str_time(), data)
@@ -166,8 +180,9 @@ def append_record(domain, sub_domain):
 
 
 def regenerate_records_list():
+    global __record_list
     __log('event', 'regenerate_records_list', 'generating records list...')
-    __record_list.clear()
+    __record_list = []
     for domain in sub_domains.keys():
         for sub_domain in sub_domains[domain]:
             append_record(domain, sub_domain)
@@ -198,26 +213,41 @@ def modify_values(value):
 def get_ip():
     try:
         tmp = __get("http://2018.ip138.com/ic.asp")
+        __log('debug', 'get_ip', tmp)
         tmp = re.search(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b", tmp)
         return tmp.group()
     except Exception as e:
         raise RuntimeException("Error while getting current ip address: %s" % e)
 
 
-def run():
+def get_dnspod_ip():
     try:
-        ip = get_ip()
+        sock = socket.create_connection(('ns1.dnspod.net', 6666), timeout=5)
+        ip = sock.recv(32).decode('ascii')
+        __log('debug', 'get_ip_dnspod', ip)
+        return ip
+    except Exception as e:
+        raise RuntimeException("Error while getting current ip address: %s" % e)
+
+
+def run():
+    global __last_ip
+    try:
+        ip = get_dnspod_ip()
         __log('debug', 'get_ip', 'Current ip address: %s' % ip)
         if __last_ip != ip:
-            __log('event', 'modify_values', 'IP address has been changed')
+            __log('event', 'deamon', 'IP address has been changed')
+            regenerate_records_list()
             modify_values(ip)
+            __last_ip = ip
     except Exception as e:
         __log('error', 'RuntimeException', "Error while checking ip address: %s" % e)
+    next_timer = threading.Timer(interval, run)
+    next_timer.start()
 
 
 if __name__ == "__main__":
-    __flog = io.open(log, 'w+')
-    regenerate_records_list()
-    run()
-    # print(__record_list)
-    # print(__Record_Modify(68861243, sub_domains[0], "384445664", "0", "219.128.20.237"))
+    if log_level != 'disable':
+        __flog = io.open(log, 'a+')
+    first_timer = threading.Timer(1, run)
+    first_timer.start()
